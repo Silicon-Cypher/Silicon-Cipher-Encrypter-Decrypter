@@ -20,3 +20,5 @@
 _ide/logs
 _ide/.wsdata
 working_full_test.vcd
+.DS_Store
+basic_test.vcd

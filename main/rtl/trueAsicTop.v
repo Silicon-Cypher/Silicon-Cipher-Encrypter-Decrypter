@@ -179,7 +179,7 @@ module asic_top (
                                 if (current_chunk_id < 7) begin
                                     current_chunk_id <= current_chunk_id + 1;
                                 end else begin
-                                    key <= temp_key;
+                                    key <= {data_to_accumulate, temp_key[223:0]};
                                     current_chunk_id <= 0;
                                     acquire_sub_state <= NONCE;
                                 end
@@ -189,7 +189,7 @@ module asic_top (
                                 if (current_chunk_id < 2) begin
                                     current_chunk_id <= current_chunk_id + 1;
                                 end else begin
-                                    nonce <= temp_nonce;
+                                    nonce <= {data_to_accumulate, temp_nonce[63:0]};
                                     current_chunk_id <= 0;
                                     acquire_sub_state <= COUNTER;
                                 end
