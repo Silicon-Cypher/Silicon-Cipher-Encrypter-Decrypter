@@ -137,6 +137,9 @@ module asic_top (
             in_state_ready <= 0;
             out_state_valid <= 0;
             out_state_word <= 0;
+            out_key_ptr <= 0;
+            out_key_valid <= 0;
+            out_key_word <= 0;
         end else begin
             // Default assignments for current cycle (overridden by FSM state)
             core_start <= 0;
@@ -223,7 +226,6 @@ module asic_top (
                                 out_key_ptr <= out_key_ptr + 1;
                             else begin
                                 out_key_ptr   <= 0;
-                                out_key_valid <= 0;
                                 fsm_state     <= LOAD_IN; // Next step: load plaintext
                             end
                         end
@@ -235,6 +237,7 @@ module asic_top (
 
                 // Load plaintext state in as 32-bit words
                 LOAD_IN: begin
+                    out_key_valid <= 0;
                     in_state_ready <= 1;
                     if (in_state_valid) begin
                         in_state[in_state_ptr*32 +: 32] <= in_state_word;
