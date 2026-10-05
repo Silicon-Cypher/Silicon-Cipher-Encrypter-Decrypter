@@ -1,0 +1,15 @@
+ { 
+  "DESIGN_NAME": "asic_top",
+"VERILOG_FILES": [
+    "dir::../main/rtl/trueAsicTop.v",
+    "dir::../main/rtl/trng_hardened.v",
+    "dir::../main/rtl/RingOsc.v",
+    "dir::../main/rtl/qr.v",
+    "dir::../main/rtl/chacha20_core.v"
+],
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 20.0,
+    "FP_CORE_UTIL": 35,
+    "PDK": "sky130A",
+    "STD_CELL_LIBRARY": "sky130_fd_sc_hd"
+}

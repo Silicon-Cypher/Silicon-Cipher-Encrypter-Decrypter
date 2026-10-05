@@ -1,7 +1,7 @@
 # Ignore build output directory
 /build
 /export
-
+runs/
 # Ignore object files and dependent files
 .o
 .d
@@ -22,3 +22,4 @@ _ide/.wsdata
 working_full_test.vcd
 .DS_Store
 basic_test.vcd
+.DS_Store
